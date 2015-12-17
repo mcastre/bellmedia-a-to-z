@@ -1,15 +1,18 @@
-#single-post {
-  @include grid-row();
-  margin-top: 3rem;
-
-  .main-content {
-    @include breakpoint(small) {
-      @include grid-column(12);
-    }
-
-    @include breakpoint(medium) {
-      @include grid-column(8);
-    }
+.introduction-text {
+  padding: 4rem 0;
+  p {
+    font-size: $medium-font-size;
+    color: $secondary-color;
   }
-
+}
+.home-locations-text,
+.home-no-limit-tagline {
+  padding: 3rem 0;
+  background-color: $primary-color;
+  h4 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
 }

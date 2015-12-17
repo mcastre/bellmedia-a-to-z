@@ -1,32 +1,45 @@
 .top-bar {
-
-  .menu .home a {
+  background: $tertiary-color;
+  ul {
+    background: none;
+  }
+  @include breakpoint(medium) {
+    background: none;
+    .menu {
+      background: none;
+      margin-top: 1rem;
+    }
+  }
+  .menu .home a, {
     font-size: 1rem;
-    color: #B9B9B9;
+    color: $tertiary-color;
   }
 
   .menu a {
-    height: 45px;
-    line-height: 45px;
-    color: #e6e6e6;
+    text-transform: uppercase;
     padding-top: 0;
     padding-bottom: 0;
     font-weight: bold;
-    font-size: 0.8rem;
-
-    &:hover:not(.button) {
-      background-color: #2a2a2a;
-    }
-  }
-
-  .menu>li:not(.menu-text)>a {
-    padding: 1rem;
-  }
-
-  .menu li:not(:last-child) {
+    font-size: $base-font-size;
+    background-color: none;
+    text-align: center;
     @include breakpoint(medium) {
-      border-right: 1px solid #4e4e4e;
+      @include transition(background-color, 200ms, ease-in-out);
+      @include border-radius(8px);
+      margin-right: 5px;
+      color: $tertiary-color;
+      &:hover:not(.button) {
+        color: white;
+        background-color: $tertiary-color;
+      }
     }
+  }
+  .menu > .active > a {
+    color: white;
+    background-color: $tertiary-color;
+  }
+  .menu>li:not(.menu-text)>a {
+    padding: 0.6rem;
   }
 
   .dropdown.menu .submenu {
@@ -34,23 +47,42 @@
     color: #e6e6e6;
     border: 0;
   }
-
   .dropdown.menu .has-submenu.is-down-arrow a {
     padding-right: 1rem;
   }
-
   .dropdown.menu .has-submenu.is-down-arrow>a::after {
     border: 0;
   }
-
-
 }
 
-.vertical &.menu {
-  padding: 1rem;
+.vertical.menu {
+  background: $tertiary-color;
+  >li:not(.menu-text)>a {
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-transform: uppercase;
+  }
 }
 
 .title-bar {
+  background: none;
+  padding: 0;
+  @include clearfix;
+  .title-bar-title {
+    float: left;
+    width: calc(100% - 60px);
+    padding-top: 8px;
+    padding-left: 17px;
+  }
+  .menu-icon-wrapper {
+    float: right;
+    margin: 0;
+    padding: 1rem;
+    width: 60px;
+    background: $tertiary-color;
+  }
   @include breakpoint(medium) {
     display: none;
   }

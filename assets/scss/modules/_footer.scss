@@ -1,18 +1,107 @@
-#footer-container {
-	max-width: 100%;
-	width: 100%;
-	margin: 0 auto;
-	border-top: 1px solid #ccc;
-	margin-top: rem-calc(60);
+.footer-locations-wrapper {
+  background: url('../images/locations-map.jpg'), no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 350px;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba($secondary-color,0.9);
+  }
+  p {
+    position: relative;
+    padding: 2rem;
+    margin-bottom: 0;
+    @include breakpoint(large) {
+      width: 50%;
+      @include absolute-center;
+    }
+    text-align: center;
+    z-index: 3;
+    font-size: $medium-font-size;
+    color: white;
+    .locations-emphasized-text {
+      display: block;
+      font-family: $header-font-family;
+      font-size: ($medium-font-size + 2px);
+      font-style: none;
+      text-transform: uppercase;
+    }
+  }
+}
+.footer-primary {
+  border-top: 7px solid $primary-color;
+  padding-bottom: 2rem;
+  @include breakpoint(small only) {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+}
+.footer-small-text {
+  display: block;
+  color: $tertiary-color;
+  font-size: ($base-font-size - 2px);
+  font-weight: bold;
+  margin-top: -0.5rem;
+  margin-left: 3rem;
+  @include breakpoint(small only) {
+    margin: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+.footer-hours {
+  @include header-font-family;
+  color: $secondary-color;
+  text-transform: uppercase;
+  font-size: $base-font-size;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  @include breakpoint(small only) {
+    text-align: center;
+  }
+  @include breakpoint(medium only) {
+    font-size: ($base-font-size - 5px);
+    margin-top: 0.75rem;
+  }
+}
+.footer-hours-small {
+  @extend .footer-small-text;
+  margin: 0;
 
-	#footer {
-		@include grid-row();
-		padding: rem-calc(30) 0;
+}
+.footer-primary .logo-logotype {
+  @include breakpoint(medium only) {
+    font-size: ($base-font-size - 5px);
+  }
+}
+.footer-primary .logo-logo-mark {
+  @include breakpoint(small only) {
+    margin-left: 3rem;
+  }
 
-		ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-		}
-	}
+}
+.footer-primary .logo-phone-box {
+  margin-top: 1.5rem;
+  @include breakpoint(small only) {
+    margin-bottom: 2rem;
+    @include horizontal-center;
+    font-size: $medium-font-size;
+  }
+  @include breakpoint(medium only) {
+    margin-left: 0;
+  }
+}
+.footer-military-logo-wrapper {
+  @include breakpoint(small only) {
+    padding: 1rem 2rem;
+  }
+}
+.footer-row {
+  margin-top: 1rem;
 }

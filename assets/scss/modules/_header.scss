@@ -1,0 +1,84 @@
+
+.header-primary {
+  border-top: 7px solid $primary-color;
+  padding-bottom: 10px;
+  @include breakpoint(medium down) {
+    padding: 0;
+  }
+}
+.hdr-emergency-service-tagline {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1.8rem;
+  background-color: $primary-color;
+  color: white;
+  @include tertiary-font-family;
+  text-transform: uppercase;
+  text-align: center;
+  @include breakpoint(medium) {
+    display: inline-block;
+    float: right;
+    width: 300px;
+  }
+  &:before {
+    @include breakpoint(medium) {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -8px;
+      width: 1rem;
+      height: 1.8rem;
+      background-color: $primary-color;
+      -moz-transform: skewX(25deg) skewY(0deg);
+      -webkit-transform: skewX(25deg) skewY(0deg);
+      -o-transform: skewX(25deg) skewY(0deg);
+      -ms-transform: skewX(25deg) skewY(0deg);
+      transform: skewX(25deg) skewY(0deg);
+    }
+  }
+  &:after {
+    @include breakpoint(medium) {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -8px;
+      width: 1rem;
+      height: 1.8rem;
+      background-color: $primary-color;
+      -moz-transform: skewX(-25deg) skewY(0deg);
+      -webkit-transform: skewX(-25deg) skewY(0deg);
+      -o-transform: skewX(-25deg) skewY(0deg);
+      -ms-transform: skewX(-25deg) skewY(0deg);
+      transform: skewX(-25deg) skewY(0deg);
+    }
+  }
+}
+.hdr-logo-wrapper {
+  margin-top: -1rem;
+}
+.logo-logo-mark img {
+  width: 2.5rem;
+}
+.logo-logotype {
+  @include header-font-family;
+  color: $secondary-color;
+  text-transform: uppercase;
+  @include header-font-family;
+  color: $secondary-color;
+  text-transform: uppercase;
+}
+.logo-phone-box {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 5px 10px;
+  color: $primary-color;
+  @include tertiary-font-family;
+  text-transform: uppercase;
+  border: 1px solid $primary-color;
+  @include border-radius(10px);
+  @include breakpoint(medium) {
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+}

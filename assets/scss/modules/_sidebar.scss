@@ -1,10 +1,42 @@
-.sidebar {
-  @include breakpoint(small) {
-    @include grid-column(12);
-  }
-
+.page-sidebar {
+  margin-top: 4rem;
+  float: left;
+  width: 100%;
   @include breakpoint(medium) {
-    @include grid-column(4);
-    margin-top: 1rem;
+    float: right;
+    width: 25%;
+  }
+}
+.page-sidebar .vertical.menu {
+  background: none;
+  @include breakpoint(medium) {
+    max-width: rem-calc(300);
+  }
+  ul {
+    @extend .no-bullet;
+    li a {
+      display: block;
+      padding: 0.7rem 1rem;
+      line-height: 1;
+      @include transition(all, 200ms, ease);
+      @include breakpoint(small only) {
+        text-align: center;
+      }
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+}
+.sidebar-menu-title {
+  font-family: $header-font-family;
+  text-transform: uppercase;
+  color: $dark-gray;
+  font-size: $base-font-size;
+  padding: 0.7rem 1rem;
+  @include breakpoint(small only) {
+    text-align: center;
+    border-top: 1px solid $medium-gray;
   }
 }

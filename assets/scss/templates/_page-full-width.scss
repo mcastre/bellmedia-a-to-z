@@ -1,12 +1,15 @@
-#page-full-width {
-  @include grid-row();
-  margin-top: 3rem;
-
-  .main-content {
-    @include breakpoint(small) {
-      @include grid-column(12);
-    }
-
+.contact-phone-number {
+  color: $primary-color;
+}
+.contact-contact-info {
+  @include breakpoint(medium) {
+    padding-top: 5rem;
   }
-
+}
+.contact-emergency-hours {
+  width: rem-calc(200);
+  font-family: $tertiary-font-family;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $light-gray;
 }

@@ -15,6 +15,8 @@
  * @since FoundationPress 1.0.0
  */
 
+remove_filter('the_content', 'wpautop'); // Disables WP's automatic formatting of post content
+
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
 

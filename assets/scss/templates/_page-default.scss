@@ -1,15 +1,80 @@
-#page {
-  @include grid-row();
-  margin-top: 3rem;
-
-  .main-content {
-    @include breakpoint(small) {
-      @include grid-column(12);
-    }
-
+.page-title-wrapper {
+  background-color: $primary-color;
+  padding: 2rem 0 2rem 2rem;
+  @include breakpoint(medium) {
+    padding: 2rem 0 2rem 4rem;
+  }
+  .page-heading {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+.page-container {
+  @include clearfix;
+}
+.page-content-wrapper {
+  float: left;
+  @include breakpoint(medium) {
+    width: 60%;
+  }
+  &.services-page {
     @include breakpoint(medium) {
-      @include grid-column(8);
+      width: 75%;
     }
   }
-
+  &.contact-page {
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+  }
+}
+.page-featured-image {
+  float: right;
+  @include breakpoint(medium) {
+    width: 40%;
+  }
+}
+.page-content {
+  padding: 2rem;
+  @include breakpoint(medium) {
+    padding: 4rem;
+  }
+  color: $secondary-color;
+  h2, h3, h4, h5 {
+    margin-top: 0.5rem;
+  }
+}
+.customer-review-wrapper {
+  @include clearfix;
+  margin-top: 3rem;
+}
+.review-quotes-circle {
+  float: left;
+  width: 5rem;
+  position: relative;
+  @include circle(5rem, $tertiary-color);
+  img {
+    width: 3rem;
+    @include absolute-center;
+  }
+}
+.review-comment-wrapper {
+  float: right;
+  width: calc(100% - 6rem);
+  h2 {
+    font-size: ($medium-font-size + 2px);
+    margin-bottom: 0;
+    color: $tertiary-color;
+  }
+  .subheader {
+    font-size: $base-font-size;
+    margin-top: 0;
+    color: $dark-gray;
+  }
+  .review-comment {
+    font-family: $tertiary-font-family;
+    margin-bottom: 0.5rem;
+    color: $black;
+  }
 }

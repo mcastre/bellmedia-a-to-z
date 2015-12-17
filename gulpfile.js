@@ -11,7 +11,7 @@ var colors      = require('colors');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = '';
+var URL = 'http://127.0.0.1:8080/wordpress/';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -58,7 +58,7 @@ var PATHS = {
 
     // What-input
     'assets/components/what-input/what-input.js',
-    
+
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js'
   ],
@@ -79,7 +79,7 @@ var PATHS = {
 
 // Browsersync task
 gulp.task('browser-sync', ['build'], function() {
-  
+
   var files = [
             '**/*.php',
             'assets/images/**/*.{png,jpg,gif}'
@@ -88,15 +88,15 @@ gulp.task('browser-sync', ['build'], function() {
   browserSync.init(files, {
     // Proxy address
     proxy: URL,
-    
-    // Port # 
+
+    // Port #
     // port: PORT
   });
 });
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
-gulp.task('sass', function() {  
+gulp.task('sass', function() {
   // Minify CSS if run wtih --production flag
   var minifycss = $.if(isProduction, $.minifyCss());
 
@@ -118,7 +118,7 @@ gulp.task('sass', function() {
 // Combine JavaScript into one file
 // In production, the file is minified
 gulp.task('javascript', function() {
-  
+
   var uglify = $.uglify()
     .on('error', function (e) {
       console.log(e);

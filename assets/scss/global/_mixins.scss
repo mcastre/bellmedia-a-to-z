@@ -1,0 +1,29 @@
+@mixin body-font-family($weight: 400) {
+  font-family: $body-font-family;
+  font-weight: $weight;
+}
+@mixin header-font-family($weight: 700) {
+  font-family: $header-font-family;
+  font-weight: $weight;
+}
+@mixin tertiary-font-family($weight: 400) {
+  font-family: $tertiary-font-family;
+  font-weight: $weight;
+}
+@mixin transition($type, $duration, $animation: ease-in-out) {
+  -webkit-transition: $type $duration $animation;
+  -moz-transition: $type $duration $animation;
+  -ms-transition: $type $duration $animation;
+  -o-transition: $type $duration $animation;
+  transition: $type $duration $animation;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin circle($size, $color) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+  @include border-radius(100rem);
+}

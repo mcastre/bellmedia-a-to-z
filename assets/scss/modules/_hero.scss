@@ -1,0 +1,41 @@
+.hero-wrapper {
+  @include clearfix;
+}
+.hero-wrapper .hero-page-title {
+  background-image: url('../images/star-bg.jpg');
+  background-repeat: no-repeat;
+  padding: 3rem 1rem;
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+  @include breakpoint(large) {
+    float: left;
+    width: 50%;
+    height: 350px;
+    padding: 5%;
+    text-align: left;
+  }
+}
+.hero-wrapper .hero-image {
+  text-align: center;
+  height: 250px;
+  overflow-y: hidden;
+  @include breakpoint(large) {
+    float: right;
+    width: 50%;
+    height: 350px;
+    img {
+      margin-top: -4rem;
+    }
+  }
+}
+.hero-heading {
+  @include tertiary-font-family;
+  color: $primary-color;
+  text-transform: uppercase;
+}
+.hero-subheading {
+  color: white;
+  font-size: ($base-font-size + 2px);
+}

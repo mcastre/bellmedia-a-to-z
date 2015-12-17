@@ -1,9 +1,9 @@
 @include breakpoint(small) {
-	#featured-hero {
+	.featured-hero {
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		margin: 0 0 rem-calc(32);
+		margin: 0;
 		position: relative;
 		height: rem-calc(200);
 		}
@@ -12,9 +12,17 @@
 			height: rem-calc(16) !important;
 		}
 }
-
-@include breakpoint(medium) {
-	#featured-hero {
-		height: rem-calc(400);
-		}
+@include breakpoint(medium only) {
+	.featured-hero {
+		min-height: rem-calc(600);
+		height: 50rem;
+		overflow-y: hidden;
+	}
+}
+@include breakpoint(large) {
+	.featured-hero {
+		min-height: rem-calc(400);
+		height: 50rem;
+		overflow-y: hidden;
+	}
 }

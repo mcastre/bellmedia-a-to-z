@@ -12,33 +12,42 @@
  */
 
  get_header(); ?>
-
- <?php get_template_part( 'parts/featured-image' ); ?>
-
  <div id="page" role="main">
 
  <?php do_action( 'foundationpress_before_content' ); ?>
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-       <header>
-           <h1 class="entry-title"><?php the_title(); ?></h1>
-       </header>
-       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-       <div class="entry-content">
-           <?php the_content(); ?>
+     <header class="page-title-wrapper">
+       <h1 class="page-heading"><?php the_title(); ?></h1>
+   	 </header>
+     <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+     <div class="page-container">
+       <div class="page-content-wrapper">
+         <div class="page-content">
+           <p><?php the_content(); ?></p>
+           <div class="customer-review-wrapper">
+             <div class="review-quotes-circle">
+               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons-svg/quotation-marks.svg" alt="Quotation marks icon" />
+             </div>
+             <div class="review-comment-wrapper">
+               <p class="review-comment">
+                 <?php the_field('customer_review'); ?>
+               </p>
+               <h2><?php the_field('customer_name'); ?></h2>
+               <h3 class="subheader"><?php the_field('customer_rating'); ?></h3>
+             </div>
+           </div>
+         </div>
        </div>
-       <footer>
-           <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-           <p><?php the_tags(); ?></p>
-       </footer>
-       <?php do_action( 'foundationpress_page_before_comments' ); ?>
-       <?php comments_template(); ?>
-       <?php do_action( 'foundationpress_page_after_comments' ); ?>
+       <div class="page-featured-image">
+         <?php get_template_part( 'parts/featured-image' ); ?>
+       </div>
+     </div>
    </article>
  <?php endwhile;?>
 
  <?php do_action( 'foundationpress_after_content' ); ?>
- <?php get_sidebar(); ?>
+
 
  </div>
 
